@@ -9,6 +9,8 @@ class SignUpForm extends StatefulWidget {
 
 class _SignUpFormState extends State<SignUpForm> {
   final _formKey = GlobalKey<FormState>();
+  String? _age;
+  String? _userName;
   String? _email;
   String? _password;
 
@@ -37,10 +39,10 @@ class _SignUpFormState extends State<SignUpForm> {
                 return null;
               },
               onChanged: (String? value)=> setState(() {
-                _email = value;
+                _userName = value;
               }),
               onSaved: (String? value) => setState(() {
-                _email = value;
+                _userName = value;
               }),
             ),
           ),
@@ -52,7 +54,7 @@ class _SignUpFormState extends State<SignUpForm> {
               onEditingComplete: () => _node.nextFocus(),
               decoration: const InputDecoration(
                 labelText: 'Age',
-                prefixIcon: Icon(Icons.alternate_email),
+                prefixIcon: Icon(Icons.stacked_line_chart_outlined),
               ),
               validator: (value) {
                 if (value == null || value.isEmpty) {
@@ -61,10 +63,10 @@ class _SignUpFormState extends State<SignUpForm> {
                 return null;
               },
               onChanged: (String? value)=> setState(() {
-                _email = value;
+                _age = value;
               }),
               onSaved: (String? value) => setState(() {
-                _email = value;
+                _age = value;
               }),
             ),
           ),
