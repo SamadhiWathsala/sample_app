@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 ThemeData myTheme() => ThemeData(
   primarySwatch: Colors.purple,
   textTheme:
-  const TextTheme(headline3: TextStyle(fontSize: 24, color: Colors.black87)),
+  const TextTheme(headline3: TextStyle(fontSize: 24, color: Colors.purple)),
   inputDecorationTheme: InputDecorationTheme(
-    fillColor: Colors.grey[300],
+    fillColor: Colors.purple[50],
     filled: true,
     hintStyle: const TextStyle(fontWeight: FontWeight.bold),
     enabledBorder: const OutlineInputBorder(
@@ -16,7 +16,7 @@ ThemeData myTheme() => ThemeData(
     focusedBorder: const OutlineInputBorder(
       borderRadius: BorderRadius.horizontal(
           left: Radius.circular(50), right: Radius.circular(50)),
-      borderSide: BorderSide(color: Colors.black87),
+      borderSide: BorderSide(color: Colors.purple),
     ),
     border: const OutlineInputBorder(
       borderRadius: BorderRadius.horizontal(

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class SignInForm extends StatefulWidget {
-  const SignInForm({Key? key}) : super(key: key);
+class SignUpForm extends StatefulWidget {
+  const SignUpForm({Key? key}) : super(key: key);
 
   @override
-  State<SignInForm> createState() => _SignInFormState();
+  State<SignUpForm> createState() => _SignUpFormState();
 }
 
-class _SignInFormState extends State<SignInForm> {
+class _SignUpFormState extends State<SignUpForm> {
   final _formKey = GlobalKey<FormState>();
   String? _email;
   String? _password;
@@ -27,12 +27,59 @@ class _SignInFormState extends State<SignInForm> {
               textAlign: TextAlign.center,
               onEditingComplete: () => _node.nextFocus(),
               decoration: const InputDecoration(
+                labelText: 'Username',
+                prefixIcon: Icon(Icons.person_outline),
+              ),
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Required field';
+                }
+                return null;
+              },
+              onChanged: (String? value)=> setState(() {
+                _email = value;
+              }),
+              onSaved: (String? value) => setState(() {
+                _email = value;
+              }),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 8,horizontal: 15),
+            child: TextFormField(
+              textAlign: TextAlign.center,
+              keyboardType: TextInputType.number,
+              onEditingComplete: () => _node.nextFocus(),
+              decoration: const InputDecoration(
+                labelText: 'Age',
+                prefixIcon: Icon(Icons.alternate_email),
+              ),
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Required field';
+                }
+                return null;
+              },
+              onChanged: (String? value)=> setState(() {
+                _email = value;
+              }),
+              onSaved: (String? value) => setState(() {
+                _email = value;
+              }),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 8,horizontal: 15),
+            child: TextFormField(
+              textAlign: TextAlign.center,
+              onEditingComplete: () => _node.nextFocus(),
+              decoration: const InputDecoration(
                 labelText: 'Email',
                 prefixIcon: Icon(Icons.alternate_email),
               ),
               validator: (value) {
                 if (value == null || value.isEmpty) {
-                  return 'Please enter your email';
+                  return 'Required field';
                 }
                 return null;
               },
@@ -59,7 +106,7 @@ class _SignInFormState extends State<SignInForm> {
               }),
               validator: (value) {
                 if (value == null || value.isEmpty) {
-                  return 'Please enter a password';
+                  return 'Required field';
                 }
                 return null;
               },
@@ -67,14 +114,6 @@ class _SignInFormState extends State<SignInForm> {
                 _password = value;
               }),
             ),
-          ),
-          Row(
-            children: [
-              Padding(
-                padding:  const EdgeInsets.only(left: 25,top: 10),
-                child: Text('Forgot password',style: TextStyle(color: Colors.blue[900],fontSize: 16,decoration: TextDecoration.underline,fontWeight: FontWeight.w700),),
-              ),
-            ],
           ),
           Padding(
             padding:  EdgeInsets.only(left: 15, right: 15,top: size.height/30,bottom: 5),
@@ -96,11 +135,10 @@ class _SignInFormState extends State<SignInForm> {
                     )
                   ],
                 ),
-                child: const Center(child: Text('LOGIN',style: TextStyle(color: Colors.white,fontSize: 18),)),
+                child: const Center(child: Text('REGISTER',style: TextStyle(color: Colors.white,fontSize: 18),)),
               ),
             ),
           ),
-
         ],
       ),
     );

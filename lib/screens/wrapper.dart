@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sample_app/screens/auth/sign_in.dart';
+import 'package:sample_app/screens/auth/sign_up.dart';
 
 class Wrapper extends StatelessWidget {
   const Wrapper({Key? key}) : super(key: key);
@@ -41,7 +42,7 @@ class Wrapper extends StatelessWidget {
           ),
           SizedBox(
               width: size.width/2.4,
-              child: ElevatedButton(onPressed: (){}, child: const Text('SIGN UP')
+              child: ElevatedButton(onPressed: ()=> Navigator.pushNamed(context, SignUp.routeName), child: const Text('SIGN UP')
               )
           )
         ],

@@ -26,30 +26,33 @@ class SignIn extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: ButtonBar(
-        alignment: MainAxisAlignment.spaceAround,
-        children: [
-          Container(
-            color: Colors.white,
-            width: size.width/5,
-            child: SvgPicture.asset('assets/images/google.svg'),
+      bottomNavigationBar: SizedBox(
+        child: SizedBox(
+          height: size.height/7,
+          child: Column(
+            children: [
+              const Padding(
+                padding: EdgeInsets.only(bottom: 5),
+                child: Text('OR SIGN IN WITH'),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: size.width/20),
+                child: const Divider(
+                  thickness: 2,
+                ),
+              ),
+              ButtonBar(
+                alignment: MainAxisAlignment.spaceAround,
+                children: [
+                  SvgPicture.asset('assets/images/google.svg'),
+                  SvgPicture.asset('assets/images/facebook.svg'),
+                  SvgPicture.asset('assets/images/stack-overflow.svg'),
+                  SvgPicture.asset('assets/images/twitter.svg')
+                ],
+              ),
+            ],
           ),
-          Container(
-            color: Colors.white,
-            width: size.width/5,
-            child: SvgPicture.asset('assets/images/facebook.svg'),
-          ),
-          Container(
-            color: Colors.white,
-            width: size.width/5,
-            child: SvgPicture.asset('assets/images/stack-overflow.svg'),
-          ),
-          Container(
-            color: Colors.white,
-            width: size.width/5,
-            child: SvgPicture.asset('assets/images/twitter.svg'),
-          )
-        ],
+        ),
       ),
     );
   }
