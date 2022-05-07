@@ -16,10 +16,6 @@ class SignIn extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Padding(
-              padding: const EdgeInsets.only(bottom: 15),
-              child: Text('Sign In',style: Theme.of(context).textTheme.headline5!.copyWith(color: Colors.purple,fontWeight: FontWeight.w500),),
-            ),
             CircleAvatar(
               radius: size.height/20,
               backgroundColor: Colors.purple[50],
